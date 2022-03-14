@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       if BCrypt::Password.new(@user.password) == params["password"]
         session[:user_id] = @user.id
         flash[:notice] = "Welcome."
-        redirect_to "/posts"
+        redirect_to "/posts/new"
       else
         flash[:notice] = "Nope."
         redirect_to "/sessions/new"
