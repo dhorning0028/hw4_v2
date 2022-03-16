@@ -17,4 +17,10 @@ class PlacesController < ApplicationController
       @place.save
       redirect_to "/places"
   end
+
+  def destroy
+    @place = Place.find(params["id"])
+    @place.destroy
+    redirect_to "/places"
+  end
 end
